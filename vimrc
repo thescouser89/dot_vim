@@ -30,7 +30,7 @@
 
  Bundle 'Rip-Rip/clang_complete'
  Bundle 'osyo-manga/neocomplcache-clang_complete'
-
+ Bundle 'kien/ctrlp.vim'
  Bundle 'a.vim'
 
  Bundle 'TaskList.vim'
@@ -242,6 +242,16 @@ let g:SuperTabContextDiscoverDiscovery =
 let g:SuperTabContextTextOmniPrecedence = ['&completefunc', '&omnifunc']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ctrlp
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_dotfiles = 0
+let g:ctrlp_switch_buffer = 0
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Dwm keybindings
 
@@ -263,6 +273,9 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bindings
+
+" to switch between buffers
+:nmap <C-t> :e#<CR>
 
 " Tagbar
 nmap <silent> <F2> :TagbarToggle<CR>
@@ -290,4 +303,10 @@ map <F12> mzgg=G`z<CR>
 
 " ZoomWin
 map <c-m> <c-w>o
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Ctrl-p
+nmap ; :CtrlPBuffer<CR>
+
+" Dirty hack to save with sudo
+cmap w!! %!sudo tee > /dev/null %
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
