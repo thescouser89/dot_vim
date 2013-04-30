@@ -3,7 +3,7 @@
  set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
  " let Vundle manage Vundle
- " required! 
+ " required!
  Bundle 'gmarik/vundle'
 
  " My Bundles here:
@@ -15,60 +15,60 @@
  Bundle 'scrooloose/syntastic'
 
  " Show tree of folder
- Bundle 'scrooloose/nerdtree' 
+ Bundle 'scrooloose/nerdtree'
 
  " Add and remove comments
- Bundle 'scrooloose/nerdcommenter' 
+ Bundle 'scrooloose/nerdcommenter'
 
  " Show indent marks
- Bundle 'mutewinter/vim-indent-guides' 
+ Bundle 'mutewinter/vim-indent-guides'
 
  " Show function / method list
  Bundle 'majutsushi/tagbar'
 
  " Close opening ( or { or ...
- Bundle 'jiangmiao/auto-pairs'    
+ Bundle 'jiangmiao/auto-pairs'
 
  " Autocompletion on pressing tab
- Bundle 'ervandew/supertab'
+ " Bundle 'ervandew/supertab'
 
  " Terminates ifs with ends -- ruby
- Bundle 'tpope/vim-endwise'   
+ Bundle 'tpope/vim-endwise'
 
  " Provides tiling keybindings
- Bundle 'spolu/dwm.vim' 
+ Bundle 'spolu/dwm.vim'
 
  " Remove whitespace at the end
  Bundle 'bronson/vim-trailing-whitespace'
 
  " Snippets
- Bundle 'msanders/snipmate.vim' 
+ Bundle 'msanders/snipmate.vim'
 
  " Zoom in and out of windows
- Bundle 'ZoomWin'  
+ Bundle 'ZoomWin'
 
  " Popup menu for autocompletion
  Bundle 'AutoComplPop'
 
  " Autocompletion stuff
- Bundle 'Shougo/neocomplcache' 
+ Bundle 'Shougo/neocomplcache'
 
  Bundle 'Rip-Rip/clang_complete'
 
  " Use necomplcache with clang_complete
- Bundle 'osyo-manga/neocomplcache-clang_complete' 
+ Bundle 'osyo-manga/neocomplcache-clang_complete'
 
  " Fuzzy file finder
  Bundle 'kien/ctrlp.vim'
 
  " Alternate between c and h file
- Bundle 'a.vim' 
+ Bundle 'a.vim'
 
  " Show TODOs
  Bundle 'TaskList.vim'
 
  " Extra highlighting of typedefs
- Bundle 'TagHighlight'  
+ Bundle 'TagHighlight'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Configurations
@@ -257,7 +257,7 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-" Enable heavy omni completion, which require computational power and may stall the vim. 
+" Enable heavy omni completion, which require computational power and may stall the vim.
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
@@ -270,11 +270,11 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " supertab
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
-let g:SuperTabContextDiscoverDiscovery =
-        \ ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
-let g:SuperTabContextTextOmniPrecedence = ['&completefunc', '&omnifunc']
+" let g:SuperTabDefaultCompletionType = "context"
+" let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
+" let g:SuperTabContextDiscoverDiscovery =
+        " \ ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
+" let g:SuperTabContextTextOmniPrecedence = ['&completefunc', '&omnifunc']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
