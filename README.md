@@ -7,7 +7,10 @@ Based my vim configs on `vundle`
 
     sh setup.sh
 
-**Warning**: This will delete your `~/.vim` folder and your `/.vimrc` file.
+**Warning**: This will delete your `~/.vim` folder and your `~/.vimrc` file.
+
+After that, open `vim` and run the command: `:BundleInstall` to install all the
+plugins.
 
 Keybindings:
 ------------
