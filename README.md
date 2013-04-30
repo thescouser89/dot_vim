@@ -20,7 +20,7 @@ Keybindings:
 * `C-j`: Jump to next window
 * `C-k`: Jump to previous window
 * `C-Space`: Place current window as master
-* `C-m': Fullscreen mode for current window`
+* `C-m`: Fullscreen mode for current window
 
 * `F2`: Toggle tabbar (show function / methods window)
 * `F3`: Show tasklist window
