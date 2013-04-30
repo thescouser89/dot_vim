@@ -27,7 +27,7 @@ Keybindings:
 * `C-Space`: Place current window as master
 * `C-m`: Fullscreen mode for current window
 
-* `F2`: Toggle tabbar (show function / methods window)
+* `F2`: Toggle tagbar (show function / methods window)
 * `F3`: Show tasklist window
 * `F4`: Toggle NerdTree (show files)
 
