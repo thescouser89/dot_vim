@@ -1,7 +1,8 @@
 Dustin's vim config files
 ===========================
 
-Based my vim configs on `vundle`
+This config file is based on the `vundle` plugin to keep all the other plugins
+up-to-date.
 
 **Important**: Run the setup.sh script:
 
@@ -11,6 +12,9 @@ Based my vim configs on `vundle`
 
 After that, open `vim` and run the command: `:BundleInstall` to install all the
 plugins.
+
+
+To update the plugins: run the command: `:BundleUpdate`
 
 Keybindings:
 ------------
