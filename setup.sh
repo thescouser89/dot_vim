@@ -1,3 +1,18 @@
+echo "############################################"
+echo "Warning:"
+echo "This script will override your ~/.vim folder"
+echo "and your ~/.vimrc file."
+echo "############################################"
+echo ""
+
+read -p "Are you sure? [y|n]: "
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    exit 1
+fi
+
+rm -rf ~/.vim
+rm ~/.vimrc
 mv `pwd` ~/.vim
 cd ~/.vim
 
