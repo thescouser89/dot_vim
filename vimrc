@@ -7,34 +7,69 @@
  Bundle 'gmarik/vundle'
 
  " My Bundles here:
+
+ " Fancy bottom bar
  Bundle 'Lokaltog/vim-powerline'
+
+ " Show compilation mistakes
  Bundle 'scrooloose/syntastic'
- Bundle 'scrooloose/nerdtree'
- Bundle 'scrooloose/nerdcommenter'
- Bundle 'mutewinter/vim-indent-guides'
+
+ " Show tree of folder
+ Bundle 'scrooloose/nerdtree' 
+
+ " Add and remove comments
+ Bundle 'scrooloose/nerdcommenter' 
+
+ " Show indent marks
+ Bundle 'mutewinter/vim-indent-guides' 
+
+ " Show function / method list
  Bundle 'majutsushi/tagbar'
- Bundle 'jiangmiao/auto-pairs'
+
+ " Close opening ( or { or ...
+ Bundle 'jiangmiao/auto-pairs'    
+
+ " Autocompletion on pressing tab
  Bundle 'ervandew/supertab'
- Bundle 'tpope/vim-endwise'
- Bundle 'skammer/vim-css-color'
- Bundle 'spolu/dwm.vim'
+
+ " Terminates ifs with ends -- ruby
+ Bundle 'tpope/vim-endwise'   
+
+ " Provides tiling keybindings
+ Bundle 'spolu/dwm.vim' 
+
+ " Remove whitespace at the end
  Bundle 'bronson/vim-trailing-whitespace'
- Bundle 'msanders/snipmate.vim'
- Bundle 'ZoomWin'
 
- Bundle 'gregsexton/gitv'
- Bundle 'tpope/vim-fugitive'
+ " Snippets
+ Bundle 'msanders/snipmate.vim' 
 
+ " Zoom in and out of windows
+ Bundle 'ZoomWin'  
+
+ " Popup menu for autocompletion
  Bundle 'AutoComplPop'
- Bundle 'Shougo/neocomplcache'
+
+ " Autocompletion stuff
+ Bundle 'Shougo/neocomplcache' 
 
  Bundle 'Rip-Rip/clang_complete'
- Bundle 'osyo-manga/neocomplcache-clang_complete'
- Bundle 'kien/ctrlp.vim'
- Bundle 'a.vim'
 
+ " Use necomplcache with clang_complete
+ Bundle 'osyo-manga/neocomplcache-clang_complete' 
+
+ " Fuzzy file finder
+ Bundle 'kien/ctrlp.vim'
+
+ " Alternate between c and h file
+ Bundle 'a.vim' 
+
+ " Show TODOs
  Bundle 'TaskList.vim'
- Bundle 'TagHighlight'
+
+ " Extra highlighting of typedefs
+ Bundle 'TagHighlight'  
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Configurations
 
@@ -188,12 +223,12 @@ set t_Co=256
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-indent-guides configuration
-au VimEnter * :IndentGuidesEnable
-let g:indent_guides_guide_size=1
-let g:indent_guides_auto_colors =0
-let g:indent_guides_color_change_percent=5
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=red ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=magenta
+" au VimEnter * :IndentGuidesEnable
+" let g:indent_guides_guide_size=1
+" let g:indent_guides_auto_colors=0
+" let g:indent_guides_color_change_percent=5
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=red ctermbg=black
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=magenta
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
