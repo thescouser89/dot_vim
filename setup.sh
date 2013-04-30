@@ -1,3 +1,6 @@
+mv `pwd` ~/.vim
+cd ~/.vim
+
 # create the symlink for vimrc
 ln -s `pwd`/vimrc ~/.vimrc
 
