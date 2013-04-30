@@ -3,13 +3,11 @@ Dustin's vim config files
 
 Based my vim configs on `vundle`
 
-**Important**: Create a soft link for `.vimrc` by using this command:
+**Important**: Run the setup.sh script:
 
-    cd ~
-    git clone git://github.com/thescouser89/dot_vim.git
-    mv dot_vim .vim
-    ln -s ~/.vim/vimrc ~/.vimrc
+    sh setup.sh
 
+**Warning**: This will delete your `~/.vim` folder and your `/.vimrc` file.
 
 Keybindings:
 ------------
