@@ -4,6 +4,12 @@ Dustin's vim config files
 This config file is based on the `vundle` plugin to keep all the other plugins
 up-to-date.
 
+Instructions:
+-------------
+
+    git clone git://github.com/thescouser89/dot_vim.git
+    cd dot_vim
+
 **Important**: Run the setup.sh script:
 
     sh setup.sh
