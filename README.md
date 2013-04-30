@@ -14,4 +14,4 @@ Based my vim configs on `vundle`
 Keybindings:
 ------------
 
-* <C-t>: Switch between buffers
+* `C-t`: Switch between buffers
