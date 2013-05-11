@@ -35,6 +35,9 @@
  " Terminates ifs with ends -- ruby
  Bundle 'tpope/vim-endwise'
 
+ " Markdown runtime files
+ Bundle 'tpope/vim-markdown'
+
  " Provides tiling keybindings
  Bundle 'spolu/dwm.vim'
 
