@@ -38,6 +38,7 @@
  " Markdown runtime files
  Bundle 'tpope/vim-markdown'
 
+ Bundle 'tpope/vim-rails'
  " Provides tiling keybindings
  Bundle 'spolu/dwm.vim'
 
@@ -73,6 +74,9 @@
  " Extra highlighting of typedefs
  Bundle 'TagHighlight'
 
+ " Ruby vim syntax
+ Bundle "vim-ruby/vim-ruby"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Configurations
 
@@ -80,6 +84,12 @@
 " Result is that when a file is edited its indent file is loaded
 filetype plugin indent on
 set encoding=utf-8
+
+" Custom tab indentation for some files
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
+
 
 " to get syntax highlighting
 syntax on
@@ -209,7 +219,7 @@ highlight OverLength ctermbg=blue ctermfg=white guibg=#592929
 match OverLength /\%>80v.\+/
 
 " Copy and paste everything from system's clipboard
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 colorscheme desert
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -348,3 +358,12 @@ nmap ; :CtrlPBuffer<CR>
 " Dirty hack to save with sudo
 cmap w!! %!sudo tee > /dev/null %
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"ruby
+" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+" " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+"improve autocomplete menu color
+highlight Pmenu ctermbg=238 gui=bold
