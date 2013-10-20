@@ -9,7 +9,10 @@
  " My Bundles here:
 
  " Fancy bottom bar
- Bundle 'Lokaltog/vim-powerline'
+ " Bundle 'Lokaltog/vim-powerline'
+
+ " Let's use vim-airline instead!
+ Bundle 'bling/vim-airline'
 
  " Show compilation mistakes
  Bundle 'scrooloose/syntastic'
@@ -29,8 +32,8 @@
  " Close opening ( or { or ...
  Bundle 'jiangmiao/auto-pairs'
 
- " Autocompletion on pressing tab
- " Bundle 'ervandew/supertab'
+" fugitive - git plugin
+Bundle 'tpope/vim-fugitive'
 
  " Terminates ifs with ends -- ruby
  Bundle 'tpope/vim-endwise'
@@ -39,31 +42,43 @@
  Bundle 'tpope/vim-markdown'
 
  " Bundle 'tpope/vim-rails'
+ 
  " Provides tiling keybindings
  Bundle 'spolu/dwm.vim'
-
- " Remove whitespace at the end
- Bundle 'bronson/vim-trailing-whitespace'
-
- " Snippets
- Bundle 'msanders/snipmate.vim'
 
  " Zoom in and out of windows
  Bundle 'ZoomWin'
 
+ " Remove whitespace at the end
+ Bundle 'bronson/vim-trailing-whitespace'
+
+ " Disabled because of neo-snippet
+ " " Snippets
+ " Bundle 'msanders/snipmate.vim'
+
+ " Not needed because of necomplcache
  " Popup menu for autocompletion
- Bundle 'AutoComplPop'
+ " Bundle 'AutoComplPop'
 
  " Autocompletion stuff
  Bundle 'Shougo/neocomplcache'
 
- Bundle 'Rip-Rip/clang_complete'
+ " snippet support
+ Bundle 'Shougo/neosnippet'
+
+ " Add additional snippets
+ Bundle 'honza/vim-snippets'
+
+ " Bundle 'Rip-Rip/clang_complete'
 
  " Use necomplcache with clang_complete
- Bundle 'osyo-manga/neocomplcache-clang_complete'
+ " Bundle 'osyo-manga/neocomplcache-clang_complete'
 
  " Fuzzy file finder
  Bundle 'kien/ctrlp.vim'
+
+ " show buffers in bottom line
+ Bundle 'bling/vim-bufferline'
 
  " Alternate between c and h file
  Bundle 'a.vim'
@@ -77,6 +92,9 @@
  " Ruby vim syntax
  Bundle "vim-ruby/vim-ruby"
 
+ " Racket support
+ Bundle 'wlangstroth/vim-racket'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Configurations
 
@@ -86,6 +104,7 @@ filetype plugin indent on
 set encoding=utf-8
 
 " Custom tab indentation for some files
+" Doesn't work that well
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
@@ -214,14 +233,16 @@ set tw=80
 " Set a line after 80 colums
 " set colorcolumn=80
 
+colorscheme desert
+
 " To highlight text that is above the 80 character limit
-highlight OverLength ctermbg=blue ctermfg=white guibg=#592929
-match OverLength /\%>80v.\+/
+" FIXME: Doesn't work
+" highlight OverLength ctermbg=blue ctermfg=white guibg=#592929
+" match OverLength /\%>80v.\+/
 
 " Copy and paste everything from system's clipboard
 set clipboard=unnamed
 
-colorscheme desert
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -236,12 +257,12 @@ set t_Co=256
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-indent-guides configuration
-" au VimEnter * :IndentGuidesEnable
-" let g:indent_guides_guide_size=1
-" let g:indent_guides_auto_colors=0
-" let g:indent_guides_color_change_percent=5
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=red ctermbg=black
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=magenta
+au VimEnter * :IndentGuidesEnable
+let g:indent_guides_guide_size=1
+let g:indent_guides_auto_colors=0
+let g:indent_guides_color_change_percent=5
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=red ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=magenta
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -257,37 +278,62 @@ let g:NERDSpaceDelims=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" neocomplcache-clang_complete
-let g:neocomplcache_force_overwrite_completefunc=1
+" " neocomplcache-clang_complete
+" let g:neocomplcache_force_overwrite_completefunc=1
 
-" add clang_complete option
-let g:clang_complete_auto=1
+" " add clang_complete option
+" let g:clang_complete_auto=1
 
-" Enable omni completion. Not required if they are already set elsewhere in .vimrc
+"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+
+"" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" " Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" " Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 1
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+let g:neocomplcache_enable_auto_select = 1
+
+" Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-" Enable heavy omni completion, which require computational power and may stall the vim.
+" " Enable heavy omni completion, which require computational power and may stall the vim.
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
-" let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
+" Enable snipMate compatibility feature.
+" Tell Neosnippet about the other snippets
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+ \ "\<Plug>(neosnippet_expand_or_jump)"
+ \: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+ \ "\<Plug>(neosnippet_expand_or_jump)"
+ \: "\<TAB>"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" supertab
-" let g:SuperTabDefaultCompletionType = "context"
-" let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
-" let g:SuperTabContextDiscoverDiscovery =
-        " \ ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
-" let g:SuperTabContextTextOmniPrecedence = ['&completefunc', '&omnifunc']
+" bufferline
+let g:bufferline_echo = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -311,13 +357,6 @@ let g:ctrlp_switch_buffer = 0
 " C-M Fullscreen mode for the current window (use focus to return to normal mode)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" If you prefer the Omni-Completion tip window to close when a selection is
-" " made, these lines close it on movement in insert mode or when leaving
-" " insert mode
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif"
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bindings
@@ -343,8 +382,8 @@ map <F6> <plug>NERDCommenterUncomment
 nnoremap <F7> :FixWhitespace<CR>
 
 " Acp
-nnoremap <F8> :AcpDisable<CR>
-nnoremap <F9> :AcpEnable<CR>
+nnoremap <F8> :NeoComplCacheDisable<CR>
+nnoremap <F9> :NeoComplCacheEnable<CR>
 
 " To fix indentation
 map <F12> mzgg=G`z<CR>
@@ -359,11 +398,5 @@ nmap ; :CtrlPBuffer<CR>
 cmap w!! %!sudo tee > /dev/null %
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
-"ruby
-" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-" " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 "improve autocomplete menu color
-highlight Pmenu ctermbg=238 gui=bold
+" highlight Pmenu ctermbg=238 gui=bold
