@@ -95,6 +95,11 @@ Bundle 'tpope/vim-fugitive'
  " Racket support
  Bundle 'wlangstroth/vim-racket'
 
+ Bundle 'derekwyatt/vim-scala'
+
+ " for REPL support via tmux
+ Bundle 'ervandew/screen'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Configurations
 
@@ -107,7 +112,8 @@ set encoding=utf-8
 " Doesn't work that well
 autocmd Filetype html setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype ruby setlocal ts=2 sw=2 sts=2 expandtab
-autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
+autocmd Filetype scala setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
 
 
 " to get syntax highlighting
@@ -357,7 +363,19 @@ let g:ctrlp_switch_buffer = 0
 " C-M Fullscreen mode for the current window (use focus to return to normal mode)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" screen config
+let g:ScreenImpl = 'Tmux'
+" for insert mode
+imap <C-c><C-c> <Esc><S-v>:ScreenSend<CR>
 
+" for visual and normal mode
+map <buffer> <C-c><C-c> <S-v>:ScreenSend<CR>
+
+imap <C-c><C-o> <Esc>:ScreenShellVertical
+map <C-c><C-o> :ScreenShellVertical
+
+imap <C-c><C-x> <Esc>:ScreenQuit<CR>
+map <C-c><C-x> :ScreenQuit<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bindings
 
