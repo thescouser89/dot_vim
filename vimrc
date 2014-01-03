@@ -93,7 +93,7 @@ Bundle 'tpope/vim-fugitive'
  Bundle "vim-ruby/vim-ruby"
 
  " Racket support
- Bundle 'wlangstroth/vim-racket'
+ " Bundle 'wlangstroth/vim-racket'
 
  Bundle 'derekwyatt/vim-scala'
 
@@ -418,3 +418,16 @@ cmap w!! %!sudo tee > /dev/null %
 
 "improve autocomplete menu color
 " highlight Pmenu ctermbg=238 gui=bold
+
+
+" conceal is used to replace text 'lambda' with 'λ'
+au VimEnter * syntax keyword Statement lambda conceal cchar=λ
+au VimEnter * hi! link Conceal Statement
+au VimEnter * set conceallevel=2
+
+
+" I disabled the vim-racket plugin because it didn't work well with conceal
+" Using this instead to consider racket file as scheme
+if has("autocmd")
+  au BufReadPost *.rkt,*.rktl set filetype=scheme
+endif
