@@ -24,7 +24,7 @@
  Bundle 'scrooloose/nerdcommenter'
 
  " Show indent marks
- Bundle 'mutewinter/vim-indent-guides'
+ Bundle 'nathanaelkane/vim-indent-guides'
 
  " Show function / method list
  Bundle 'majutsushi/tagbar'
