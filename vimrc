@@ -8,6 +8,9 @@
 
  " My Bundles here:
 
+ " Colorscheme
+ Bundle 'matthewtodd/vim-twilight'
+
  " Fancy bottom bar
  " Bundle 'Lokaltog/vim-powerline'
 
@@ -211,7 +214,7 @@ set wildmode=list:longest,full
 set mouse=a
 
 " wrap the text after 80 characters
-set wrap
+set nowrap
 
 set list listchars=tab:>·,trail:·,extends:>,precedes:<
 
@@ -236,10 +239,8 @@ runtime macros/matchit.vim
 " text width
 set tw=80
 
-" Set a line after 80 colums
-" set colorcolumn=80
-
-colorscheme desert
+" Set a line after 81 colums
+set colorcolumn=81
 
 " To highlight text that is above the 80 character limit
 " FIXME: Doesn't work
@@ -250,7 +251,7 @@ colorscheme desert
 set clipboard=unnamed
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+colorscheme twilight
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " powerline configuration
 
@@ -270,7 +271,7 @@ let g:indent_guides_color_change_percent=5
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=red ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=magenta
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+highlight Search ctermbg=LightBlue
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tagbar
 " let g:tagbar_left=1
@@ -369,7 +370,8 @@ let g:ScreenImpl = 'Tmux'
 imap <C-c><C-c> <Esc><S-v>:ScreenSend<CR>
 
 " for visual and normal mode
-map <buffer> <C-c><C-c> <S-v>:ScreenSend<CR>
+vmap <C-c><C-c> :ScreenSend<CR>
+nmap <C-c><C-c> <S-v>:ScreenSend<CR>
 
 imap <C-c><C-o> <Esc>:ScreenShellVertical
 map <C-c><C-o> :ScreenShellVertical
