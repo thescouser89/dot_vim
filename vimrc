@@ -44,8 +44,6 @@ Bundle 'tpope/vim-fugitive'
  " Markdown runtime files
  Bundle 'tpope/vim-markdown'
 
- " Bundle 'tpope/vim-rails'
- 
  " Provides tiling keybindings
  Bundle 'spolu/dwm.vim'
 
@@ -271,7 +269,10 @@ let g:indent_guides_color_change_percent=5
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=red ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=magenta
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Done so that the searched term is very clear
 highlight Search ctermbg=LightBlue
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tagbar
 " let g:tagbar_left=1
