@@ -11,9 +11,6 @@
  " Colorscheme
  Bundle 'matthewtodd/vim-twilight'
 
- " let's try the solarized theme
- Bundle 'altercation/vim-colors-solarized'
-
  " Fancy bottom bar
  " Bundle 'Lokaltog/vim-powerline'
 
@@ -252,11 +249,7 @@ set colorcolumn=81
 set clipboard=unnamed
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" colorscheme twilight
-
-" let's try the solarized theme (dark)
-set background=dark
-colorscheme solarized
+colorscheme twilight
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " powerline configuration
 
