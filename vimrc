@@ -53,27 +53,14 @@ Bundle 'tpope/vim-fugitive'
  " Remove whitespace at the end
  Bundle 'bronson/vim-trailing-whitespace'
 
- " Disabled because of neo-snippet
- " " Snippets
- " Bundle 'msanders/snipmate.vim'
-
- " Not needed because of necomplcache
- " Popup menu for autocompletion
- " Bundle 'AutoComplPop'
-
  " Autocompletion stuff
- Bundle 'Shougo/neocomplcache'
+ Bundle 'Shougo/neocomplete'
 
  " snippet support
  Bundle 'Shougo/neosnippet'
 
  " Add additional snippets
  Bundle 'honza/vim-snippets'
-
- " Bundle 'Rip-Rip/clang_complete'
-
- " Use necomplcache with clang_complete
- " Bundle 'osyo-manga/neocomplcache-clang_complete'
 
  " Fuzzy file finder
  Bundle 'kien/ctrlp.vim'
@@ -92,6 +79,8 @@ Bundle 'tpope/vim-fugitive'
 
  " Ruby vim syntax
  Bundle "vim-ruby/vim-ruby"
+
+ Bundle 'fatih/vim-go'
 
  " Racket support
  " Bundle 'wlangstroth/vim-racket'
@@ -286,26 +275,6 @@ let g:NERDSpaceDelims=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" " neocomplcache-clang_complete
-" let g:neocomplcache_force_overwrite_completefunc=1
-
-" " add clang_complete option
-" let g:clang_complete_auto=1
-
-"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-
-"" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
-" " Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" " Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 1
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
-let g:neocomplcache_enable_auto_select = 1
-
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -314,36 +283,12 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-" " Enable heavy omni completion, which require computational power and may stall the vim.
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
-endif
-
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
-
-" Enable snipMate compatibility feature.
-" Tell Neosnippet about the other snippets
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
- \ "\<Plug>(neosnippet_expand_or_jump)"
- \: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
- \ "\<Plug>(neosnippet_expand_or_jump)"
- \: "\<TAB>"
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " bufferline
 let g:bufferline_echo = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctrlp
@@ -402,10 +347,6 @@ map <F6> <plug>NERDCommenterUncomment
 " Fix whitespace
 nnoremap <F7> :FixWhitespace<CR>
 
-" Acp
-nnoremap <F8> :NeoComplCacheDisable<CR>
-nnoremap <F9> :NeoComplCacheEnable<CR>
-
 " To fix indentation
 map <F12> mzgg=G`z<CR>
 
@@ -428,6 +369,16 @@ au VimEnter * syntax keyword Statement lambda conceal cchar=λ
 au VimEnter * hi! link Conceal Statement
 au VimEnter * set conceallevel=2
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" enable neocomplete from the start
+let g:neocomplete#enable_at_startup = 1
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " I disabled the vim-racket plugin because it didn't work well with conceal
 " Using this instead to consider racket file as scheme
