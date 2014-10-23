@@ -372,6 +372,12 @@ au VimEnter * set conceallevel=2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " enable neocomplete from the start
 let g:neocomplete#enable_at_startup = 1
+
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" AutoComplPop like behavior.
+let g:neocomplete#enable_auto_select = 1"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable snipMate compatibility feature.
 let g:neosnippet#enable_snipmate_compatibility = 1
