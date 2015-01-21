@@ -224,7 +224,7 @@ hi PmenuSel ctermfg=white ctermbg=darkblue guibg=#555555 guifg=#ffffff
 runtime macros/matchit.vim
 
 " text width
-set tw=80
+" set tw=80
 
 " Set a line after 81 colums
 set colorcolumn=81
@@ -235,7 +235,7 @@ set colorcolumn=81
 " match OverLength /\%>80v.\+/
 
 " Copy and paste everything from system's clipboard
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme twilight
@@ -257,6 +257,11 @@ let g:indent_guides_auto_colors=0
 let g:indent_guides_color_change_percent=5
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=red ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=magenta
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fix stupid html formatting where it does not indent html, body, etc tags
+let g:html_indent_inctags = "html,body,head,tbody"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Done so that the searched term is very clear
