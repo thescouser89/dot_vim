@@ -12,9 +12,6 @@
  Bundle 'matthewtodd/vim-twilight'
 
  " Fancy bottom bar
- " Bundle 'Lokaltog/vim-powerline'
-
- " Let's use vim-airline instead!
  Bundle 'bling/vim-airline'
 
  " Show compilation mistakes
@@ -44,23 +41,8 @@ Bundle 'tpope/vim-fugitive'
  " Markdown runtime files
  Bundle 'tpope/vim-markdown'
 
- " Provides tiling keybindings
- Bundle 'spolu/dwm.vim'
-
- " Zoom in and out of windows
- Bundle 'ZoomWin'
-
  " Remove whitespace at the end
  Bundle 'bronson/vim-trailing-whitespace'
-
- " Autocompletion stuff
- Bundle 'Shougo/neocomplete'
-
- " snippet support
- Bundle 'Shougo/neosnippet'
-
- " Add additional snippets
- Bundle 'honza/vim-snippets'
 
  " Fuzzy file finder
  Bundle 'kien/ctrlp.vim'
@@ -68,33 +50,15 @@ Bundle 'tpope/vim-fugitive'
  " show buffers in bottom line
  Bundle 'bling/vim-bufferline'
 
- " Alternate between c and h file
- Bundle 'a.vim'
-
  " Show TODOs
  Bundle 'TaskList.vim'
 
- " Extra highlighting of typedefs
- Bundle 'TagHighlight'
-
  " Ruby vim syntax
  Bundle "vim-ruby/vim-ruby"
-
- Bundle 'fatih/vim-go'
-
- " Racket support
- " Bundle 'wlangstroth/vim-racket'
-
- Bundle 'derekwyatt/vim-scala'
-
- " for REPL support via tmux
- Bundle 'ervandew/screen'
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Configurations
 
 " Result is that when a file is edited its plugin file is loaded (if detected)
-" Result is that when a file is edited its indent file is loaded
 filetype plugin indent on
 set encoding=utf-8
 
@@ -104,7 +68,6 @@ autocmd Filetype html setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype ruby setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype scala setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
-
 
 " to get syntax highlighting
 syntax on
@@ -120,11 +83,10 @@ set autoindent
 set smartindent
 
 " cindent is more customizable, but also more strict when it comes to syntax
-" When it comes to C and C++, file type based indentations automatillcay sets
+" When it comes to C and C++, file type based indentations automatically sets
 " cindent and for that reason, there is no need to set cindent manually for
 " such files
 "
-" set cident
 
 " This setting is used for indentation purely with hard tabs
 
@@ -201,7 +163,7 @@ set wildmode=list:longest,full
 set mouse=a
 
 " wrap the text after 80 characters
-set nowrap
+" set nowrap
 
 set list listchars=tab:>·,trail:·,extends:>,precedes:<
 
@@ -213,18 +175,11 @@ set list listchars=tab:>·,trail:·,extends:>,precedes:<
 " highlight FoldColumn ctermbg=darkgrey ctermfg=grey
 " nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
 
-
 " the menu color
 hi Pmenu ctermfg=white ctermbg=darkgrey guibg=#444444
 
 " the menu slected color
 hi PmenuSel ctermfg=white ctermbg=darkblue guibg=#555555 guifg=#ffffff
-
-" To match more stuff with %
-runtime macros/matchit.vim
-
-" text width
-" set tw=80
 
 " Set a line after 81 colums
 set colorcolumn=81
@@ -279,17 +234,6 @@ let g:tagbar_autoclose=1
 let g:NERDSpaceDelims=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " bufferline
 let g:bufferline_echo = 0
@@ -303,35 +247,8 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Dwm keybindings
-
-" C-N Creates a new window and place it in the master pane [M] & stacks all previous windows in the stacked pane [S]
-" C-C Close the current window if no unsaved changes
-" C-J Jumps to next window (clockwise)
-" C-K Jumps to previous window (anti-clockwise)
-" C-Space Focus the current window, that is, place it in the master pane [M] & stacks all other windows in the stacked pane [S]
-" C-M Fullscreen mode for the current window (use focus to return to normal mode)
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" screen config
-let g:ScreenImpl = 'Tmux'
-" for insert mode
-imap <C-c><C-c> <Esc><S-v>:ScreenSend<CR>
-
-" for visual and normal mode
-vmap <C-c><C-c> :ScreenSend<CR>
-nmap <C-c><C-c> <S-v>:ScreenSend<CR>
-
-imap <C-c><C-o> <Esc>:ScreenShellVertical
-map <C-c><C-o> :ScreenShellVertical
-
-imap <C-c><C-x> <Esc>:ScreenQuit<CR>
-map <C-c><C-x> :ScreenQuit<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bindings
-
 " to switch between buffers
 :nmap <C-t> :e#<CR>
 
@@ -374,25 +291,5 @@ au VimEnter * syntax keyword Statement lambda conceal cchar=λ
 au VimEnter * hi! link Conceal Statement
 au VimEnter * set conceallevel=2
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" enable neocomplete from the start
-let g:neocomplete#enable_at_startup = 1
-
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" AutoComplPop like behavior.
-let g:neocomplete#enable_auto_select = 1"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
-
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" I disabled the vim-racket plugin because it didn't work well with conceal
-" Using this instead to consider racket file as scheme
-if has("autocmd")
-  au BufReadPost *.rkt,*.rktl set filetype=scheme
-endif
+" so that we can switch between unsaved buffers
+set hidden
