@@ -55,6 +55,8 @@ Bundle 'tpope/vim-fugitive'
 
  " Ruby vim syntax
  Bundle "vim-ruby/vim-ruby"
+
+ Bundle "Rip-Rip/clang_complete"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Configurations
 
