@@ -1,2 +1,6 @@
 bundle/
 *.swp
+.VimballRecord
+bin/
+doc/
+plugin/
