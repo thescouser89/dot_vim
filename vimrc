@@ -35,6 +35,9 @@
 " fugitive - git plugin
 Bundle 'tpope/vim-fugitive'
 
+" git-gutter
+Bundle 'airblade/vim-gitgutter'
+
  " Terminates ifs with ends -- ruby
  Bundle 'tpope/vim-endwise'
 
@@ -53,11 +56,17 @@ Bundle 'tpope/vim-fugitive'
  " Show TODOs
  Bundle 'TaskList.vim'
 
+ " Show rgb colors
+ Bundle 'colorizer'
+
  " Ruby vim syntax
  Bundle "vim-ruby/vim-ruby"
 
  " Get C/C++ autocompletion
  Bundle "Rip-Rip/clang_complete"
+
+ " YCM
+ Bundle "Valloric/YouCompleteMe"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Configurations
 
@@ -257,6 +266,9 @@ let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set Leader Key
+:let mapleader = " "
+
 " Bindings
 " to switch between buffers
 :nmap <C-t> :e#<CR>
@@ -281,11 +293,12 @@ nnoremap <F7> :FixWhitespace<CR>
 " To fix indentation
 map <F12> mzgg=G`z<CR>
 
-" ZoomWin
-map <c-m> <c-w>o
-
 " Ctrl-p
 nmap ; :CtrlPBuffer<CR>
+nmap <Leader>p :CtrlPMixed<CR>
+
+" ycm
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 
 " Dirty hack to save with sudo
 cmap w!! %!sudo tee > /dev/null %
@@ -302,3 +315,7 @@ au VimEnter * set conceallevel=2
 
 " so that we can switch between unsaved buffers
 set hidden
+
+" window management
+map <Leader>o :split<CR>
+map <Leader>e :vsplit<CR>
