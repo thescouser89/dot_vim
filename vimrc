@@ -319,3 +319,8 @@ set hidden
 " window management
 map <Leader>o :split<CR>
 map <Leader>e :vsplit<CR>
+
+" hack to disable syntastic for java
+" disabled because it slows down vim a lot
+" https://stackoverflow.com/a/28244756/2907906
+let g:loaded_syntastic_java_javac_checker = 1
