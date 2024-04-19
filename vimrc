@@ -57,7 +57,7 @@ Bundle 'airblade/vim-gitgutter'
  Bundle 'TaskList.vim'
 
  " Show rgb colors
- " Bundle 'colorizer'
+ Bundle 'ap/vim-css-color'
 
  " Ruby vim syntax
  Bundle "vim-ruby/vim-ruby"
