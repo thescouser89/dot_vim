@@ -59,9 +59,6 @@ Bundle 'airblade/vim-gitgutter'
  " Show rgb colors
  Bundle 'ap/vim-css-color'
 
- " Ruby vim syntax
- Bundle "vim-ruby/vim-ruby"
-
  " Get C/C++ autocompletion
  Bundle "Rip-Rip/clang_complete"
 
