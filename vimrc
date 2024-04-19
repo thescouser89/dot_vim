@@ -57,7 +57,7 @@ Bundle 'airblade/vim-gitgutter'
  Bundle 'TaskList.vim'
 
  " Show rgb colors
- Bundle 'colorizer'
+ " Bundle 'colorizer'
 
  " Ruby vim syntax
  Bundle "vim-ruby/vim-ruby"
@@ -292,6 +292,9 @@ nnoremap <F7> :FixWhitespace<CR>
 
 " To fix indentation
 map <F12> mzgg=G`z<CR>
+
+nmap <F8> i<C-R>=strftime("* %Y-%m-%d %A\n-----------------------------------------")<CR><Esc>
+imap <F8> <C-R>=strftime("* %Y-%m-%d %A\n-----------------------------------------")<CR>
 
 " Ctrl-p
 nmap ; :CtrlPBuffer<CR>
