@@ -338,3 +338,6 @@ let g:loaded_syntastic_java_javac_checker = 1
 "   Ps = 6  -> steady bar (xterm).
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
+
+" Hilight line where cursor is
+set cursorline
