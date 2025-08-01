@@ -1,75 +1,84 @@
- set nocompatible               " be iMproved
- filetype off                   " required!
- set rtp+=~/.vim/bundle/vundle/
- call vundle#rc()
- " let Vundle manage Vundle
- " required!
- Bundle 'gmarik/vundle'
+set nocompatible               " be iMproved
+filetype off                   " required!
 
- " My Bundles here:
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
- " Colorscheme
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" My Bundles here:
+
+" Colorscheme
 " Bundle 'matthewtodd/vim-twilight'
- Bundle 'ghifarit53/tokyonight-vim'
+Plugin 'ghifarit53/tokyonight-vim'
 
+" Fancy bottom bar
+" Plugin 'bling/vim-airline'
+Plugin 'itchyny/lightline.vim'
 
- " Fancy bottom bar
- Bundle 'bling/vim-airline'
+" Show compilation mistakes
+" Plugin 'scrooloose/syntastic'
+Plugin 'dense-analysis/ale'
 
- " Show compilation mistakes
- Bundle 'scrooloose/syntastic'
+" Show tree of folder
+" Plugin 'preservim/nerdtree'
 
- " Show tree of folder
- Bundle 'preservim/nerdtree'
+" Add and remove comments
+Plugin 'preservim/nerdcommenter'
 
- " Add and remove comments
- Bundle 'preservim/nerdcommenter'
+" Show indent marks
+Plugin 'preservim/vim-indent-guides'
 
- " Show indent marks
- Bundle 'nathanaelkane/vim-indent-guides'
+" Show function / method list
+Plugin 'preservim/tagbar'
 
- " Show function / method list
- Bundle 'majutsushi/tagbar'
-
- " Close opening ( or { or ...
- Bundle 'jiangmiao/auto-pairs'
+" Close opening ( or { or ...
+Plugin 'jiangmiao/auto-pairs'
 
 " fugitive - git plugin
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
 " git-gutter
-Bundle 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 
- " Terminates ifs with ends -- ruby
- Bundle 'tpope/vim-endwise'
+" Terminates ifs with ends -- ruby
+Plugin 'tpope/vim-endwise'
 
- " Markdown runtime files
- Bundle 'tpope/vim-markdown'
+" Markdown runtime files
+Plugin 'tpope/vim-markdown'
 
- " Remove whitespace at the end
- Bundle 'bronson/vim-trailing-whitespace'
+" Remove whitespace at the end
+Plugin 'bronson/vim-trailing-whitespace'
 
- " Fuzzy file finder
- Bundle 'kien/ctrlp.vim'
+" Fuzzy file finder
+Plugin 'kien/ctrlp.vim'
 
- " show buffers in bottom line
- Bundle 'bling/vim-bufferline'
+" show buffers in bottom line
+Plugin 'bling/vim-bufferline'
 
- " Show TODOs
- Bundle 'TaskList.vim'
+" Show TODOs
+Plugin 'TaskList.vim'
 
- " Show rgb colors
- Bundle 'ap/vim-css-color'
+" Show rgb colors
+Plugin 'ap/vim-css-color'
 
- " Get C/C++ autocompletion
- " Bundle 'Rip-Rip/clang_complete'
+" Get C/C++ autocompletion
+" Plugin 'Rip-Rip/clang_complete'
 
- " YCM
- " Bundle 'Valloric/YouCompleteMe'
+" YCM
+" Plugin 'Valloric/YouCompleteMe'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Configurations
 
-" Result is that when a file is edited its plugin file is loaded (if detected)
 filetype plugin indent on
 set encoding=utf-8
 

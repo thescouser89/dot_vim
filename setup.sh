@@ -19,8 +19,7 @@ cd ~/.vim
 # create the symlink for vimrc
 ln -s `pwd`/vimrc ~/.vimrc
 
-mkdir -p bundle/vundle
-git clone https://github.com/gmarik/vundle.git bundle/vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 echo "Please run *vim* and type:"
 echo ""
