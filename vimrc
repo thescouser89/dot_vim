@@ -9,7 +9,9 @@
  " My Bundles here:
 
  " Colorscheme
- Bundle 'matthewtodd/vim-twilight'
+" Bundle 'matthewtodd/vim-twilight'
+ Bundle 'ghifarit53/tokyonight-vim'
+
 
  " Fancy bottom bar
  Bundle 'bling/vim-airline'
@@ -18,10 +20,10 @@
  Bundle 'scrooloose/syntastic'
 
  " Show tree of folder
- Bundle 'scrooloose/nerdtree'
+ Bundle 'preservim/nerdtree'
 
  " Add and remove comments
- Bundle 'scrooloose/nerdcommenter'
+ Bundle 'preservim/nerdcommenter'
 
  " Show indent marks
  Bundle 'nathanaelkane/vim-indent-guides'
@@ -60,10 +62,10 @@ Bundle 'airblade/vim-gitgutter'
  Bundle 'ap/vim-css-color'
 
  " Get C/C++ autocompletion
- Bundle "Rip-Rip/clang_complete"
+ " Bundle 'Rip-Rip/clang_complete'
 
  " YCM
- Bundle "Valloric/YouCompleteMe"
+ " Bundle 'Valloric/YouCompleteMe'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Configurations
 
@@ -202,7 +204,13 @@ set colorcolumn=81
 set clipboard=unnamedplus
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme twilight
+" colorscheme twilight
+set termguicolors
+
+let g:tokyonight_style = 'storm' " available: night, storm
+let g:tokyonight_enable_italic = 1
+
+colorscheme tokyonight
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " powerline configuration
 
