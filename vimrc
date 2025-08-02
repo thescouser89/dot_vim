@@ -214,7 +214,7 @@ set colorcolumn=81
 " match OverLength /\%>80v.\+/
 
 " Copy and paste everything from system's clipboard
-set clipboard=unnamedplus
+set clipboard^=unnamed,unnamedplus
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " colorscheme twilight
