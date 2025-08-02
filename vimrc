@@ -67,6 +67,10 @@ Plugin 'TaskList.vim'
 " Show rgb colors
 Plugin 'ap/vim-css-color'
 
+" fzf plugin: use :Files<Enter> or :GFiles<Enter> to activate
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+
 " Get C/C++ autocompletion
 " Plugin 'Rip-Rip/clang_complete'
 
